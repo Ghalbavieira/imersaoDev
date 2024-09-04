@@ -85,8 +85,7 @@ section input {
     box-sizing: border-box;
 }
 
-section button,
-section .link-info {
+section button {
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 1.5rem;
@@ -104,6 +103,12 @@ section .link-info {
 
 .mostrar{
     display: block;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
 }
 
 section button:hover {
@@ -126,6 +131,7 @@ section button:hover {
     padding: 1rem;
     margin-bottom: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
 }
 
 .item-resultado h2 {
