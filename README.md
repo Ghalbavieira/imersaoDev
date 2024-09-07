@@ -27,14 +27,15 @@ Utilize a barra de busca para procurar livros por título ou autor.
 Os resultados aparecerão na página com todas as informações dos livros.
 Estrutura do Projeto 📂
 
-📦 projeto-busca-livros
- ┣ 📂 assets
- ┃ ┣ 📂 css
- ┃ ┃ ┗ 📄 styles.css
- ┃ ┣ 📂 js
- ┃ ┃ ┗ 📄 script.js
- ┣ 📄 index.html
- ┗ 📄 README.md
+📦 projeto-busca-livros<br>
+ ┣ 📂 assets<br>
+ ┃ ┣ 📂 css<br>
+ ┃ ┃ ┗ 📄 styles.css<br>
+ ┃ ┣ 📂 js<br>
+ ┃ ┃ ┗ 📄 main.js<br>
+ ┣ 📄 index.html<br>
+ ┗ 📄 README.md<br>
+
 index.html: Página principal.
 assets/css/styles.css: Estilos CSS para o layout e aparência.
 assets/js/script.js: Código JavaScript para a lógica da busca e exibição.
