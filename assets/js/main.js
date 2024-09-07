@@ -2,19 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('searchButton');
     const searchInput = document.getElementById('searchInput');
     const resultsContainer = document.getElementById('results');
-    const infoLink = document.querySelector('.link-info');
-
-    if (!searchButton || !searchInput || !resultsContainer || !infoLink) {
-        console.error("Um ou mais elementos não foram encontrados na página.");
-        return;
-    }
 
     const livros = [
         { 
             titulo: 'JavaScript: O Guia Definitivo', 
             autor: 'David Flanagan', 
             descricao: 'Este é um dos livros mais completos sobre JavaScript, cobrindo desde os conceitos básicos até os mais avançados.',
-            link: '#',
+            link: 'https://www.amazon.com.br/JavaScript-Guia-Definitivo-David-Flanagan/dp/856583719X',
             imagem: 'https://down-br.img.susercontent.com/file/br-11134207-7qukw-liio54ywc2lx8d' 
         },
         { 
@@ -122,40 +116,46 @@ document.addEventListener('DOMContentLoaded', function() {
     searchButton.addEventListener('click', function() {
         const query = searchInput.value;
         const resultados = buscarLivros(query);
-
+    
         resultsContainer.innerHTML = '';
-
+    
         if (resultados.length > 0) {
             resultados.forEach(livro => {
                 const itemResultado = document.createElement('div');
                 itemResultado.classList.add('item-resultado');
-
+    
+                const imagemDiv = document.createElement('div');
+                imagemDiv.classList.add('imagem-div');
+    
                 const imagem = document.createElement('img');
                 imagem.src = livro.imagem;
                 imagem.alt = `Capa do livro ${livro.titulo}`;
                 imagem.classList.add('livro-imagem');
-
+    
+                imagemDiv.appendChild(imagem);
+    
                 const livroDiv = document.createElement('div');
-                livroDiv.classList.add('livro-item');
+                livroDiv.classList.add('livro-info');
                 livroDiv.innerHTML = `
                     <strong>${livro.titulo}</strong> - ${livro.autor}
                     <p>${livro.descricao}</p>
                 `;
-
+    
                 const linkBtn = document.createElement('a');
                 linkBtn.href = livro.link;
                 linkBtn.textContent = 'Saiba Mais';
                 linkBtn.classList.add('botao-link');
                 linkBtn.target = '_blank';
-
-                itemResultado.appendChild(imagem);
-                itemResultado.appendChild(livroDiv);
-                itemResultado.appendChild(linkBtn);
-                
-                resultsContainer.appendChild(itemResultado);
+    
+                livroDiv.appendChild(linkBtn);
+    
+                itemResultado.appendChild(imagemDiv);
+                itemResultado.appendChild(livroDiv);     
+                resultsContainer.appendChild(itemResultado); 
             });
         } else {
             resultsContainer.innerHTML = '<p>Nenhum livro encontrado.</p>';
         }
     });
+    
 });

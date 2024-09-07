@@ -97,10 +97,6 @@ section button {
     text-decoration: none;
 }
 
-.link-info{
-    display: none;
-}
-
 .mostrar{
     display: block;
 }
@@ -139,13 +135,20 @@ section button:hover {
     color: #222831;
 }
 
+.livro-info p{
+    margin-bottom: 10px;
+}
+
 .item-resultado a {
     text-decoration: none;
-    color: #30475E;
+    color: #fff;
+    padding: 5px 10px;
+    background-color: #30475E;
+    border-radius: 30px;
 }
 
 .item-resultado a:hover {
-    text-decoration: underline; 
+    text-decoration: none;
 }
 
 .descricao-meta {
