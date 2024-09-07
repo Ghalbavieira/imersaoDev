@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const resultsContainer = document.getElementById('results');
 
-    const livros = [
+    const books = [
         { 
             titulo: 'JavaScript: O Guia Definitivo', 
             autor: 'David Flanagan', 
@@ -36,80 +36,73 @@ document.addEventListener('DOMContentLoaded', function() {
             titulo: 'Padrões JavaScript', 
             autor: 'Stoyan Stefanov', 
             descricao: 'Um guia prático para padrões de design em JavaScript, ajudando a escrever código mais limpo e eficiente.',
-            link: 'https://www.amazon.com.br/dp/0596806752',
-            imagem: 'https://m.media-amazon.com/images/I/51bTkG+gwTL.jpg' 
+            link: 'https://www.amazon.com.br/Padr%C3%B5es-Javascript-Stoyan-Stefanov/dp/857522266X',
+            imagem: 'https://m.media-amazon.com/images/I/71ptg7YuEbL._SY425_.jpg' 
         },
         { 
             titulo: 'Aprendendo Padrões de Design em JavaScript', 
             autor: 'Addy Osmani', 
             descricao: 'Este livro cobre padrões de design aplicados ao JavaScript, ideal para desenvolvedores que querem aprimorar suas habilidades.',
             link: 'https://www.amazon.com.br/dp/1449331815',
-            imagem: 'https://m.media-amazon.com/images/I/51xSVc0mJrL.jpg' 
-        },
-        { 
-            titulo: 'JavaScript Eficaz: 68 Maneiras Específicas de Explorar o Poder do JavaScript', 
-            autor: 'David Herman', 
-            descricao: 'Este livro oferece 68 maneiras específicas de escrever código JavaScript mais eficaz e robusto.',
-            link: 'https://www.amazon.com.br/dp/0321812182',
-            imagem: 'https://m.media-amazon.com/images/I/51lVml-KQmL.jpg' 
+            imagem: 'https://m.media-amazon.com/images/I/81LpyFBbo8L._AC_UF894,1000_QL80_.jpg' 
         },
         { 
             titulo: 'Segredos do Ninja JavaScript', 
             autor: 'John Resig e Bear Bibeault', 
             descricao: 'Um guia para levar suas habilidades JavaScript para o próximo nível, ensinando técnicas avançadas.',
-            link: 'https://www.amazon.com.br/dp/193398869X',
-            imagem: 'https://images-na.ssl-images-amazon.com/images/I/81Ujl8luAqL.jpg' 
+            link: 'https://www.amazon.com.br/Segredos-Ninja-Javascript-John-Resig/dp/8575223283',
+            imagem: 'https://m.media-amazon.com/images/I/71WwIhf0SLL._SY425_.jpg' 
         },
         { 
             titulo: 'JavaScript Profissional para Desenvolvedores Web', 
             autor: 'Nicholas C. Zakas', 
             descricao: 'Um recurso essencial para desenvolvedores que querem dominar JavaScript em contextos profissionais.',
-            link: 'https://www.amazon.com.br/dp/1118026691',
-            imagem: 'https://images-na.ssl-images-amazon.com/images/I/91asIC1fRwL.jpg' 
+            link: 'https://www.amazon.com.br/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691',
+            imagem: 'https://m.media-amazon.com/images/I/61zGRdIwrWL._SY385_.jpg' 
         },
         { 
             titulo: 'HTML e CSS: Projete e Construa Websites', 
             autor: 'Jon Duckett', 
             descricao: 'Um livro visualmente atraente que ensina HTML e CSS de forma simples e eficaz, ideal para iniciantes.',
-            link: 'https://www.amazon.com.br/dp/1118008189',
-            imagem: 'https://images-na.ssl-images-amazon.com/images/I/518FqJvR9aL.jpg' 
+            link: 'https://www.amazon.com.br/HTML-CSS-projete-construa-Websites/dp/8576089394',
+            imagem: 'https://m.media-amazon.com/images/I/51-paNiiAKL._SY425_.jpg' 
         },
         { 
             titulo: 'Segredos do CSS: Melhores Soluções para Problemas Cotidianos de Design Web', 
             autor: 'Lea Verou', 
             descricao: 'Este livro revela truques e técnicas de CSS que podem resolver problemas comuns de design web.',
-            link: 'https://www.amazon.com.br/dp/1449372635',
-            imagem: 'https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg' 
+            link: '5https://www.amazon.com.br/CSS-Secrets-Lea-Verou/dp/1449372635/ref=sr_1_1?dib=eyJ2IjoiMSJ9.vDHXECw1ZliGXUYV8nyxDgmmg-7ScUKL2zKjX4qQZO0R4Ha93KCjiVRht4i5SZoo.i8FKaQrd2oSAzEQ5-N7Us6H3fkyjKKnt1oAG1og-_9I&dib_tag=se&qid=1725747510&refinements=p_27%3ALea+Verou&s=books&sr=1-1',
+            imagem: 'https://m.media-amazon.com/images/I/91EGxvygVTL._SY385_.jpg' 
         },
         { 
             titulo: 'Design Responsivo com HTML5 e CSS', 
             autor: 'Ben Frain', 
             descricao: 'Um guia prático para construir sites modernos e responsivos usando HTML5 e CSS.',
-            link: 'https://www.amazon.com.br/dp/1784398931',
-            imagem: 'https://images-na.ssl-images-amazon.com/images/I/51wqKtfE30L.jpg' 
+            link: 'https://www.amazon.com.br/Responsive-Web-Design-HTML5-Third/dp/1839211563',
+            imagem: 'https://m.media-amazon.com/images/I/71xVO2SmgaL._SY385_.jpg' 
         },
         { 
             titulo: 'Aprendendo Design Web: Um Guia para Iniciantes em HTML, CSS, JavaScript e Gráficos Web', 
             autor: 'Jennifer Niederst Robbins', 
             descricao: 'Perfeito para iniciantes, este livro cobre todos os fundamentos de HTML, CSS e JavaScript.',
-            link: 'https://www.amazon.com.br/dp/1449319270',
-            imagem: 'https://images-na.ssl-images-amazon.com/images/I/51SWBoJnuIL.jpg' 
+            link: 'https://www.amazon.com.br/Learning-Web-Design-Beginners-JavaScript/dp/1449319270',
+            imagem: 'https://m.media-amazon.com/images/I/91YPcsFTbIL._SY385_.jpg' 
         },
         { 
             titulo: 'CSS: O Guia Definitivo', 
             autor: 'Eric A. Meyer', 
             descricao: 'Um recurso abrangente que abrange tudo o que você precisa saber sobre CSS.',
-            link: 'https://www.amazon.com.br/dp/1449393195',
-            imagem: 'https://images-na.ssl-images-amazon.com/images/I/51J4D6tINFL.jpg' 
+            link: 'https://www.amazon.com.br/CSS-Definitive-Guide-Eric-Meyer/dp/0596527330',
+            imagem: 'https://m.media-amazon.com/images/I/61nbxIjEPvS._SY385_.jpg' 
         }
 
     ];
 
     
     function buscarLivros(query) {
-        return livros.filter(livro => 
-            livro.titulo.toLowerCase().includes(query.toLowerCase()) || 
-            livro.autor.toLowerCase().includes(query.toLowerCase())
+        return books.filter(books => 
+            books.titulo.toLowerCase().includes(query.toLowerCase()) || 
+            books.autor.toLowerCase().includes(query.toLowerCase())
         );
     }
 
